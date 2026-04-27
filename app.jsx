@@ -1885,45 +1885,89 @@ function HormoziSection({ lang }) {
 // ============ Nav ============
 function Nav({ t, lang, setLang, onCta }) {
   const [scrolled, setScrolled] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+
   useEffect(() => {
     const on = () => setScrolled(window.scrollY > 12);
     on();
     window.addEventListener("scroll", on, { passive: true });
     return () => window.removeEventListener("scroll", on);
   }, []);
+
+  const closeMenu = () => setIsOpen(false);
+
   return (
-    <nav className={`nav nav-white ${scrolled ? "scrolled" : ""}`}>
-      <div className="nav-inner">
-        <a href="#top" className="nav-logo">
-          <img src="assets/logo.png" alt="SGF" style={{ height: "54px", width: "auto", objectFit: "contain" }} />
-          <span style={{ color: "#0a0a0b", fontWeight: 700 }}>START GROW FAST</span>
-        </a>
-        <div className="nav-links">
-          <a href="#services" style={{ color: "#0a0a0b" }}>{t.nav.services}</a>
-          <a href="#how" style={{ color: "#0a0a0b" }}>{t.nav.how}</a>
-          <a href="#niches" style={{ color: "#0a0a0b" }}>{t.nav.niches}</a>
-          <a href="#cases" style={{ color: "#0a0a0b" }}>{t.nav.work}</a>
-          <a href="/blog/index.html" style={{ color: "#0a0a0b" }}>{t.nav.blog}</a>
-          <a href="#contact" style={{ color: "#0a0a0b" }}>{t.nav.contact}</a>
-        </div>
-        <div className="nav-right">
-          <div className="lang-switcher" role="group" aria-label="Language">
-            <button className={`lang-btn ${lang === "es" ? "active" : ""}`} onClick={() => setLang("es")} title="Español">
-              <img src="assets/flag_es.png" alt="ES" style={{ width: "16px", height: "auto", objectFit: "contain", borderRadius: "2px" }} />
-              <span className="lang-code">ES</span>
-            </button>
-            <span className="lang-sep" aria-hidden="true" />
-            <button className={`lang-btn ${lang === "en" ? "active" : ""}`} onClick={() => setLang("en")} title="English">
-              <img src="assets/flag_en.png" alt="EN" style={{ width: "16px", height: "auto", objectFit: "contain", borderRadius: "2px" }} />
-              <span className="lang-code">EN</span>
+    <>
+      <nav className={`nav nav-white ${scrolled ? "scrolled" : ""}`}>
+        <div className="nav-inner">
+          <a href="#top" className="nav-logo" onClick={closeMenu}>
+            <img src="assets/logo.png" alt="SGF" style={{ height: "54px", width: "auto", objectFit: "contain" }} />
+            <span style={{ color: "#0a0a0b", fontWeight: 700 }}>START GROW FAST</span>
+          </a>
+          <div className="nav-links">
+            <a href="#services" style={{ color: "#0a0a0b" }}>{t.nav.services}</a>
+            <a href="#how" style={{ color: "#0a0a0b" }}>{t.nav.how}</a>
+            <a href="#niches" style={{ color: "#0a0a0b" }}>{t.nav.niches}</a>
+            <a href="#cases" style={{ color: "#0a0a0b" }}>{t.nav.work}</a>
+            <a href="/blog/index.html" style={{ color: "#0a0a0b" }}>{t.nav.blog}</a>
+            <a href="#contact" style={{ color: "#0a0a0b" }}>{t.nav.contact}</a>
+          </div>
+          <div className="nav-right">
+            <div className="lang-switcher" role="group" aria-label="Language">
+              <button className={`lang-btn ${lang === "es" ? "active" : ""}`} onClick={() => setLang("es")} title="Español">
+                <img src="assets/flag_es.png" alt="ES" style={{ width: "16px", height: "auto", objectFit: "contain", borderRadius: "2px" }} />
+                <span className="lang-code">ES</span>
+              </button>
+              <span className="lang-sep" aria-hidden="true" />
+              <button className={`lang-btn ${lang === "en" ? "active" : ""}`} onClick={() => setLang("en")} title="English">
+                <img src="assets/flag_en.png" alt="EN" style={{ width: "16px", height: "auto", objectFit: "contain", borderRadius: "2px" }} />
+                <span className="lang-code">EN</span>
+              </button>
+            </div>
+            <button className="nav-cta-new" onClick={onCta}>
+              {t.nav.cta} <Arrow />
             </button>
           </div>
-          <button className="nav-cta-new" onClick={onCta}>
-            {t.nav.cta} <Arrow />
+          
+          <button 
+            className={`nav-hamburger ${isOpen ? 'open' : ''}`} 
+            onClick={() => setIsOpen(!isOpen)}
+            aria-label="Toggle menu"
+          >
+            <span className="hamburger-line"></span>
+            <span className="hamburger-line"></span>
+            <span className="hamburger-line"></span>
           </button>
         </div>
+      </nav>
+
+      <div className={`nav-mobile-overlay ${isOpen ? 'open' : ''}`}>
+        <div className="nav-mobile-menu">
+          <div className="nav-mobile-links">
+            <a href="#services" onClick={closeMenu}>{t.nav.services}</a>
+            <a href="#how" onClick={closeMenu}>{t.nav.how}</a>
+            <a href="#niches" onClick={closeMenu}>{t.nav.niches}</a>
+            <a href="#cases" onClick={closeMenu}>{t.nav.work}</a>
+            <a href="/blog/index.html" onClick={closeMenu}>{t.nav.blog}</a>
+            <a href="#contact" onClick={closeMenu}>{t.nav.contact}</a>
+          </div>
+          <div className="nav-mobile-bottom">
+            <div className="lang-switcher-mobile">
+              <button className={`lang-btn ${lang === "es" ? "active" : ""}`} onClick={() => { setLang("es"); closeMenu(); }}>
+                <img src="assets/flag_es.png" alt="ES" style={{ width: "20px", height: "auto" }} />
+                <span>ES</span>
+              </button>
+              <button className={`lang-btn ${lang === "en" ? "active" : ""}`} onClick={() => { setLang("en"); closeMenu(); }}>
+                <img src="assets/flag_en.png" alt="EN" style={{ width: "20px", height: "auto" }} />
+                <span>EN</span>
+              </button>
+            </div>
+            <button className="nav-mobile-cta" onClick={() => { onCta(); closeMenu(); }}>
+              {t.nav.cta} <Arrow size={18} />
+            </button>
+          </div>
+        </div>
       </div>
-    </nav>
   );
 }
 
