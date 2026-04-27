@@ -3034,16 +3034,27 @@ function BigCTA({ lang }) {
 }
 
 // ============ Contact ============
+// ─── CONFIG DE ENVÍO ────────────────────────────────────────────
+// OPCIÓN A — Web3Forms (sin activación, funciona siempre):
+//   1. Ve a https://web3forms.com/ → pon team@startgrowfastaiagents.com → copia la clave
+//   2. Pégala aquí:
+const WEB3FORMS_KEY = "";   // ← pega aquí la clave de web3forms.com
+
+// OPCIÓN B — FormSubmit (un único endpoint, solo 1 activación):
+const FORM_MAIN = "team@startgrowfastaiagents.com";
+const FORM_CC   = "santiagogonzalez@startgrowfastaiagents.com,ceo@startgrowfastaiagents.com";
+// ────────────────────────────────────────────────────────────────
+
 const RECIPIENTS = {
   es: [
-    { label: "Equipo general",  email: "team@startgrowfastaiagents.com",           desc: "Consultas generales" },
-    { label: "Santiago González (Fundador)", email: "santiagogonzalez@startgrowfastaiagents.com", desc: "Propuestas y partnerships" },
-    { label: "CEO",             email: "ceo@startgrowfastaiagents.com",            desc: "Decisiones estratégicas" },
+    { label: "Equipo general",             desc: "Consultas generales" },
+    { label: "Santiago González (Fundador)",desc: "Propuestas y partnerships" },
+    { label: "CEO",                         desc: "Decisiones estratégicas" },
   ],
   en: [
-    { label: "General team",    email: "team@startgrowfastaiagents.com",           desc: "General inquiries" },
-    { label: "Santiago González (Founder)", email: "santiagogonzalez@startgrowfastaiagents.com", desc: "Proposals & partnerships" },
-    { label: "CEO",             email: "ceo@startgrowfastaiagents.com",            desc: "Strategic decisions" },
+    { label: "General team",               desc: "General inquiries" },
+    { label: "Santiago González (Founder)",desc: "Proposals & partnerships" },
+    { label: "CEO",                         desc: "Strategic decisions" },
   ],
 };
 
@@ -3051,31 +3062,60 @@ function Contact({ t, lang }) {
   const es = lang === "es";
   const [sent, setSent] = useState(false);
   const [sending, setSending] = useState(false);
+  const [error, setError] = useState(false);
   const recipients = RECIPIENTS[lang] || RECIPIENTS.es;
   const [recipientIdx, setRecipientIdx] = useState(0);
 
   const onSubmit = async (e) => {
     e.preventDefault();
     setSending(true);
+    setError(false);
     const form = e.target;
     const data = Object.fromEntries(new FormData(form));
-    const toEmail = recipients[recipientIdx].email;
-    const ccEmails = recipients.filter((_, i) => i !== recipientIdx).map(r => r.email).join(",");
+    const label = recipients[recipientIdx].label;
+    const subject = `[${label}] ${es ? "Nueva consulta" : "New inquiry"} — startgrowfastaiagents.com`;
+
     try {
-      await fetch(`https://formsubmit.co/ajax/${toEmail}`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json", Accept: "application/json" },
-        body: JSON.stringify({
-          ...data,
-          _cc: ccEmails,
-          _subject: `[${recipients[recipientIdx].label}] Nueva consulta — startgrowfastaiagents.com`,
-        }),
-      });
-    } catch (_) {}
-    setSending(false);
-    setSent(true);
-    form.reset();
-    setTimeout(() => setSent(false), 5000);
+      if (WEB3FORMS_KEY) {
+        // ── Web3Forms: sin activación, sin captcha, funciona siempre ──
+        const res = await fetch("https://api.web3forms.com/submit", {
+          method: "POST",
+          headers: { "Content-Type": "application/json", Accept: "application/json" },
+          body: JSON.stringify({
+            access_key: WEB3FORMS_KEY,
+            subject,
+            from_name: "START GROW FAST AI AGENTS",
+            ...data,
+            para: label,
+          }),
+        });
+        if (!res.ok) throw new Error("web3forms");
+      } else {
+        // ── FormSubmit: un solo endpoint, CC a todos, sin captcha ──
+        const res = await fetch(`https://formsubmit.co/ajax/${FORM_MAIN}`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json", Accept: "application/json" },
+          body: JSON.stringify({
+            ...data,
+            _cc: FORM_CC,
+            _captcha: "false",
+            _subject: subject,
+            _template: "table",
+            para: label,
+          }),
+        });
+        if (!res.ok) throw new Error("formsubmit");
+      }
+      setSent(true);
+      form.reset();
+      setRecipientIdx(0);
+      setTimeout(() => setSent(false), 6000);
+    } catch (_) {
+      setError(true);
+      setTimeout(() => setError(false), 5000);
+    } finally {
+      setSending(false);
+    }
   };
 
   return (
@@ -3158,13 +3198,15 @@ function Contact({ t, lang }) {
               </label>
             </div>
 
-            <window.MetalButton type="submit" variant="primary" disabled={sending || sent} className="w-full mt-2">
+            <window.MetalButton type="submit" variant="primary" disabled={sending || sent || error} className="w-full mt-2">
               {sent
-                ? (es ? "✓ Enviado" : "✓ Sent")
+                ? (es ? "✓ Enviado correctamente" : "✓ Sent successfully")
                 : sending
                   ? (es ? "Enviando…" : "Sending…")
-                  : t.contact.form.send}
-              {!sent && !sending && <Arrow />}
+                  : error
+                    ? (es ? "✗ Error — intenta de nuevo" : "✗ Error — please retry")
+                    : t.contact.form.send}
+              {!sent && !sending && !error && <Arrow />}
             </window.MetalButton>
           </form>
         </div>
