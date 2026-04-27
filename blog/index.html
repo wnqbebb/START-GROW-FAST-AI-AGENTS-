@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title class="lang-es">Blog — START GROW FAST AI AGENTS</title>
+<meta name="description" content="Ideas sobre performance creativo, volumen, sistemas y la era del QUALUME." />
+<link rel="icon" type="image/png" href="../assets/logo.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="_post.css" />
+<style>
+  .blog-index { max-width: 1100px; margin: 0 auto; padding: clamp(60px,8vw,100px) clamp(20px,4vw,48px); }
+  .bi-header { margin-bottom: 64px; border-bottom: 1px solid var(--line); padding-bottom: 40px; }
+  .bi-eyebrow { font-family: var(--mono); font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); opacity: .7; display: block; margin-bottom: 16px; }
+  .bi-title { font-family: var(--display); font-size: clamp(32px,5vw,64px); font-weight: 700; letter-spacing: -.04em; line-height: 1.05; color: var(--fg); margin: 0 0 16px; }
+  .bi-sub { color: var(--fg-dim); font-size: clamp(14px,1.1vw,16px); line-height: 1.6; max-width: 52ch; margin: 0; }
+  .bi-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; }
+  .bi-card { display: flex; flex-direction: column; border: 1px solid var(--line); border-radius: 12px; overflow: hidden; text-decoration: none; color: inherit; background: var(--surface,rgba(255,255,255,.025)); transition: border-color .3s, transform .3s; }
+  .bi-card:hover { border-color: rgba(8,145,178,.45); transform: translateY(-4px); }
+  .bi-card-img { aspect-ratio: 16/9; background: linear-gradient(135deg,rgba(8,145,178,.1),rgba(34,211,238,.05)); position: relative; display: flex; align-items: flex-end; padding: 16px; }
+  .bi-card-tag { font-family: var(--mono); font-size: 9px; letter-spacing: .14em; text-transform: uppercase; color: var(--accent); background: rgba(8,145,178,.12); border: 1px solid rgba(8,145,178,.2); padding: 4px 10px; border-radius: 100px; }
+  .bi-card-body { padding: 20px; display: flex; flex-direction: column; gap: 8px; flex: 1; }
+  .bi-card-title { font-family: var(--display); font-size: clamp(14px,1.1vw,17px); font-weight: 700; color: var(--fg); letter-spacing: -.02em; line-height: 1.25; margin: 0; }
+  .bi-card-desc { font-size: 13px; color: var(--fg-dim); line-height: 1.55; margin: 0; flex: 1; }
+  .bi-card-foot { display: flex; justify-content: space-between; align-items: center; margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--line); }
+  .bi-card-meta { font-family: var(--mono); font-size: 10px; letter-spacing: .08em; color: rgba(255,255,255,.35); text-transform: uppercase; }
+  .bi-card-read { font-size: 12px; font-weight: 600; color: var(--accent); }
+  .bi-back { margin-top: 56px; text-align: center; }
+  .bi-back a { display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; border: 1px solid rgba(8,145,178,.3); border-radius: 100px; color: var(--accent); font-size: 14px; font-weight: 500; text-decoration: none; transition: background .2s; }
+  .bi-back a:hover { background: rgba(8,145,178,.1); }
+  @media (max-width: 900px) { .bi-grid { grid-template-columns: repeat(2,1fr); } }
+  @media (max-width: 580px) { .bi-grid { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<nav class="subpage-nav">
+  <a href="../index.html" class="logo">
+    <img src="../assets/logo.png" alt="SGF" />
+    START GROW FAST AI AGENTS
+  </a>
+  <div style="display:flex;align-items:center;gap:16px;">
+    <div class="bl-switch">
+      <button data-lang="es">🇪🇸 ES</button>
+      <button data-lang="en">🇬🇧 EN</button>
+    </div>
+    <a href="../index.html" class="back lang-es">← Inicio</a>
+    <a href="../index.html" class="back lang-en">← Home</a>
+  </div>
+</nav>
+
+<div class="blog-index">
+
+  <!-- ── ES Header ── -->
+  <header class="bi-header lang-es">
+    <span class="bi-eyebrow">§ ESCRITOS · 10 artículos</span>
+    <h1 class="bi-title">Notas de la máquina.</h1>
+    <p class="bi-sub">Ideas sobre performance creativo, volumen, sistemas y la era del QUALUME. Todo lo que una agencia de performance debería saber sobre creatividad con IA.</p>
+  </header>
+
+  <!-- ── EN Header ── -->
+  <header class="bi-header lang-en">
+    <span class="bi-eyebrow">§ WRITINGS · 10 articles</span>
+    <h1 class="bi-title">Notes from the machine.</h1>
+    <p class="bi-sub">Ideas on creative performance, volume, systems and the QUALUME era. Everything a performance agency should know about AI creative production.</p>
+  </header>
+
+  <!-- ── Grid ES ── -->
+  <div class="bi-grid lang-es">
+
+    <a href="cuello-botella-creativo.html" class="bi-card">
+      <div class="bi-card-img" style="background-image: url('../assets/media/niches/n5-tech-1.jpg'); background-size: cover; background-position: center;"><span class="bi-card-tag">Sistemas</span></div>
+      <div class="bi-card-body">
+        <h2 class="bi-card-title">Cómo eliminar el cuello de botella creativo de tu agencia</h2>
+        <p class="bi-card-desc">El cuello de botella creativo no es un problema de talento. Es un problema de arquitectura. Diagnóstico completo.</p>
+        <div class="bi-card-foot"><span class="bi-card-meta">9 min · Feb 2026</span><span class="bi-card-read">Leer →</span></div>
+      </div>
+    </a>
+
+    <a href="qualume-cantidad-calidad.html" class="bi-card">
+      <div class="bi-card-img" style="background-image: url('../assets/media/niches/n1-fashion-1.jpg'); background-size: cover; background-position: center;"><span class="bi-card-tag">Performance</span></div>
+      <div class="bi-card-body">
+        <h2 class="bi-card-title">QUALUME: La era de la calidad a volumen que exigen los algoritmos</h2>
+        <p class="bi-card-desc">Alex Hormozi le puso nombre. Análisis de lo que significa QUALUME para agencias ecommerce de performance en 2026.</p>
+        <div class="bi-card-foot"><span class="bi-card-meta">7 min · Feb 2026</span><span class="bi-card-read">Leer →</span></div>
+      </div>
+    </a>
+
+    <a href="creative-performance-os.html" class="bi-card">
+      <div class="bi-card-img" style="background-image: url('../assets/media/niches/n5-tech-2.jpg'); background-size: cover; background-position: center;"><span class="bi-card-tag">Sistemas</span></div>
+      <div class="bi-card-body">
+        <h2 class="bi-card-title">Qué es un Creative Performance OS y por qué tu agencia lo necesita</h2>
+        <p class="bi-card-desc">Un Creative Performance OS no es un servicio creativo. Es la infraestructura que convierte la creatividad en ventaja operativa.</p>
+        <div class="bi-card-foot"><span class="bi-card-meta">8 min · Mar 2026</span><span class="bi-card-read">Leer →</span></div>
+      </div>
+    </a>
+
+    <a href="creatividad-es-segmentacion.html" class="bi-card">
+      <div class="bi-card-img" style="background-image: url('../assets/media/niches/n1-fashion-2.jpg'); background-size: cover; background-position: center;"><span class="bi-card-tag">Performance</span></div>
+      <div class="bi-card-body">
+        <h2 class="bi-card-title">Por qué la creatividad es la nueva segmentación en Meta Ads</h2>
+        <p class="bi-card-desc">Andrómeda cambió las reglas. En 2026 el creativo no solo es el anuncio — es el sistema de segmentación.</p>
+        <div class="bi-card-foot"><span class="bi-card-meta">6 min · Mar 2026</span><span class="bi-card-read">Leer →</span></div>
+      </div>
+    </a>
+
+    <a href="ugc-ia-vs-shootings.html" class="bi-card">
+      <div class="bi-card-img" style="background-image: url('../assets/media/niches/n2-beauty-1.jpg'); background-size: cover; background-position: center;"><span class="bi-card-tag">Producción</span></div>
+      <div class="bi-card-body">
+        <h2 class="bi-card-title">UGC con IA vs. shootings tradicionales: la comparación definitiva</h2>
+        <p class="bi-card-desc">Coste, velocidad, escala y calidad visual. Análisis real de lo que una agencia gana al eliminar el shooting del proceso.</p>
+        <div class="bi-card-foot"><span class="bi-card-meta">8 min · Mar 2026</span><span class="bi-card-read">Leer →</span></div>
+      </div>
+    </a>
+
+    <a href="ventaja-compuesta.html" class="bi-card">
+      <div class="bi-card-img" style="background-image: url('../assets/media/niches/n3-supl-1.jpg'); background-size: cover; background-position: center;"><span class="bi-card-tag">Sistemas</span></div>
+      <div class="bi-card-body">
+        <h2 class="bi-card-title">La ventaja compuesta del creativo: por qué mejorar semana a semana cambia las reglas</h2>
+        <p class="bi-card-desc">Un sistema creativo que aprende acumula una ventaja difícil de replicar. El compound effect en creatividad de performance.</p>
+        <div class="bi-card-foot"><span class="bi-card-meta">6 min · Abr 2026</span><span class="bi-card-read">Leer →</span></div>
+      </div>
+    </a>
+
+    <a href="volumen-creativo-matematicas.html" class="bi-card">
+      <div class="bi-card-img" style="background-image: url('../assets/media/niches/n5-tech-3.jpg'); background-size: cover; background-position: center;"><span class="bi-card-tag">Performance</span></div>
+      <div class="bi-card-body">
+        <h2 class="bi-card-title">Las matemáticas del volumen creativo en paid social</h2>
+        <p class="bi-card-desc">Cuántos creativos necesitas para encontrar un ganador. Las probabilidades, los ciclos de testeo y lo que ninguna agencia te cuenta.</p>
+        <div class="bi-card-foot"><span class="bi-card-meta">7 min · Abr 2026</span><span class="bi-card-read">Leer →</span></div>
+      </div>
+    </a>
+
+    <a href="dfy-vs-diy-produccion-creativa.html" class="bi-card">
+      <div class="bi-card-img" style="background-image: url('../assets/media/niches/n5-tech-4.jpg'); background-size: cover; background-position: center;"><span class="bi-card-tag">Operaciones</span></div>
+      <div class="bi-card-body">
+        <h2 class="bi-card-title">DFY vs. DIY en producción creativa: cuándo tiene sentido cada modelo</h2>
+        <p class="bi-card-desc">No todos los equipos deberían producir internamente. Cuándo el modelo Done For You genera más ROI que montar un equipo creativo propio.</p>
+        <div class="bi-card-foot"><span class="bi-card-meta">5 min · Abr 2026</span><span class="bi-card-read">Leer →</span></div>
+      </div>
+    </a>
+
+    <a href="ugc-hiperrealista-ecommerce.html" class="bi-card">
+      <div class="bi-card-img" style="background-image: url('../assets/media/niches/n2-beauty-2.jpg'); background-size: cover; background-position: center;"><span class="bi-card-tag">Producción</span></div>
+      <div class="bi-card-body">
+        <h2 class="bi-card-title">UGC hiperrealista para ecommerce: el nuevo estándar que convierte</h2>
+        <p class="bi-card-desc">Qué hace que un UGC generado con IA supere en conversión al UGC orgánico. Variables de confianza, autenticidad y contexto.</p>
+        <div class="bi-card-foot"><span class="bi-card-meta">7 min · Abr 2026</span><span class="bi-card-read">Leer →</span></div>
+      </div>
+    </a>
+
+    <a href="feedback-loop-creativo.html" class="bi-card">
+      <div class="bi-card-img" style="background-image: url('../assets/media/niches/n3-supl-2.jpg'); background-size: cover; background-position: center;"><span class="bi-card-tag">Sistemas</span></div>
+      <div class="bi-card-body">
+        <h2 class="bi-card-title">El feedback loop creativo: cómo hacer que cada lote sea mejor que el anterior</h2>
+        <p class="bi-card-desc">Un sistema creativo sin feedback loop es solo producción aleatoria. Así se estructura un ciclo que aprende y mejora solo.</p>
+        <div class="bi-card-foot"><span class="bi-card-meta">6 min · Abr 2026</span><span class="bi-card-read">Leer →</span></div>
+      </div>
+    </a>
+
+  </div><!-- /grid ES -->
+
+  <!-- ── Grid EN ── -->
+  <div class="bi-grid lang-en">
+
+    <a href="cuello-botella-creativo.html" class="bi-card">
+      <div class="bi-card-img" style="background-image: url('../assets/media/niches/n5-tech-1.jpg'); background-size: cover; background-position: center;"><span class="bi-card-tag">Systems</span></div>
+      <div class="bi-card-body">
+        <h2 class="bi-card-title">How to eliminate your agency's creative bottleneck</h2>
+        <p class="bi-card-desc">The creative bottleneck is not a talent problem. It's an architecture problem. Full diagnosis and solution.</p>
+        <div class="bi-card-foot"><span class="bi-card-meta">9 min · Feb 2026</span><span class="bi-card-read">Read →</span></div>
+      </div>
+    </a>
+
+    <a href="qualume-cantidad-calidad.html" class="bi-card">
+      <div class="bi-card-img" style="background-image: url('../assets/media/niches/n1-fashion-1.jpg'); background-size: cover; background-position: center;"><span class="bi-card-tag">Performance</span></div>
+      <div class="bi-card-body">
+        <h2 class="bi-card-title">QUALUME: The quality-at-volume era algorithms now demand</h2>
+        <p class="bi-card-desc">Alex Hormozi named it. Full analysis of what QUALUME means for performance ecommerce agencies in 2026.</p>
+        <div class="bi-card-foot"><span class="bi-card-meta">7 min · Feb 2026</span><span class="bi-card-read">Read →</span></div>
+      </div>
+    </a>
+
+    <a href="creative-performance-os.html" class="bi-card">
+      <div class="bi-card-img" style="background-image: url('../assets/media/niches/n5-tech-2.jpg'); background-size: cover; background-position: center;"><span class="bi-card-tag">Systems</span></div>
+      <div class="bi-card-body">
+        <h2 class="bi-card-title">What a Creative Performance OS is and why your agency needs one</h2>
+        <p class="bi-card-desc">A Creative Performance OS is not a creative service. It's the infrastructure that turns creativity into operational advantage.</p>
+        <div class="bi-card-foot"><span class="bi-card-meta">8 min · Mar 2026</span><span class="bi-card-read">Read →</span></div>
+      </div>
+    </a>
+
+    <a href="creatividad-es-segmentacion.html" class="bi-card">
+      <div class="bi-card-img" style="background-image: url('../assets/media/niches/n1-fashion-2.jpg'); background-size: cover; background-position: center;"><span class="bi-card-tag">Performance</span></div>
+      <div class="bi-card-body">
+        <h2 class="bi-card-title">Why creativity is the new targeting in Meta Ads</h2>
+        <p class="bi-card-desc">Andromeda changed the rules. In 2026, the creative is not just the ad — it is the targeting system. Full analysis.</p>
+        <div class="bi-card-foot"><span class="bi-card-meta">6 min · Mar 2026</span><span class="bi-card-read">Read →</span></div>
+      </div>
+    </a>
+
+    <a href="ugc-ia-vs-shootings.html" class="bi-card">
+      <div class="bi-card-img" style="background-image: url('../assets/media/niches/n2-beauty-1.jpg'); background-size: cover; background-position: center;"><span class="bi-card-tag">Production</span></div>
+      <div class="bi-card-body">
+        <h2 class="bi-card-title">AI UGC vs. traditional shoots: the definitive comparison</h2>
+        <p class="bi-card-desc">Cost, speed, scale and visual quality. A real analysis of what an agency gains by removing the shoot from the process.</p>
+        <div class="bi-card-foot"><span class="bi-card-meta">8 min · Mar 2026</span><span class="bi-card-read">Read →</span></div>
+      </div>
+    </a>
+
+    <a href="ventaja-compuesta.html" class="bi-card">
+      <div class="bi-card-img" style="background-image: url('../assets/media/niches/n3-supl-1.jpg'); background-size: cover; background-position: center;"><span class="bi-card-tag">Systems</span></div>
+      <div class="bi-card-body">
+        <h2 class="bi-card-title">The compound creative advantage: why improving week by week changes everything</h2>
+        <p class="bi-card-desc">A creative system that learns accumulates an edge that's hard to replicate. The compound effect in performance creative production.</p>
+        <div class="bi-card-foot"><span class="bi-card-meta">6 min · Apr 2026</span><span class="bi-card-read">Read →</span></div>
+      </div>
+    </a>
+
+    <a href="volumen-creativo-matematicas.html" class="bi-card">
+      <div class="bi-card-img" style="background-image: url('../assets/media/niches/n5-tech-3.jpg'); background-size: cover; background-position: center;"><span class="bi-card-tag">Performance</span></div>
+      <div class="bi-card-body">
+        <h2 class="bi-card-title">The math of creative volume in paid social</h2>
+        <p class="bi-card-desc">How many creatives do you need to find a winner? The probabilities, testing cycles and what no agency tells you.</p>
+        <div class="bi-card-foot"><span class="bi-card-meta">7 min · Apr 2026</span><span class="bi-card-read">Read →</span></div>
+      </div>
+    </a>
+
+    <a href="dfy-vs-diy-produccion-creativa.html" class="bi-card">
+      <div class="bi-card-img" style="background-image: url('../assets/media/niches/n5-tech-4.jpg'); background-size: cover; background-position: center;"><span class="bi-card-tag">Operations</span></div>
+      <div class="bi-card-body">
+        <h2 class="bi-card-title">DFY vs. DIY in creative production: when each model makes sense</h2>
+        <p class="bi-card-desc">Not every team should produce internally. When Done For You generates more ROI than building your own creative team.</p>
+        <div class="bi-card-foot"><span class="bi-card-meta">5 min · Apr 2026</span><span class="bi-card-read">Read →</span></div>
+      </div>
+    </a>
+
+    <a href="ugc-hiperrealista-ecommerce.html" class="bi-card">
+      <div class="bi-card-img" style="background-image: url('../assets/media/niches/n2-beauty-2.jpg'); background-size: cover; background-position: center;"><span class="bi-card-tag">Production</span></div>
+      <div class="bi-card-body">
+        <h2 class="bi-card-title">Hyperrealistic AI UGC for ecommerce: the new converting standard</h2>
+        <p class="bi-card-desc">What makes AI-generated UGC outperform organic UGC in conversion. Trust, authenticity and context variables.</p>
+        <div class="bi-card-foot"><span class="bi-card-meta">7 min · Apr 2026</span><span class="bi-card-read">Read →</span></div>
+      </div>
+    </a>
+
+    <a href="feedback-loop-creativo.html" class="bi-card">
+      <div class="bi-card-img" style="background-image: url('../assets/media/niches/n3-supl-2.jpg'); background-size: cover; background-position: center;"><span class="bi-card-tag">Systems</span></div>
+      <div class="bi-card-body">
+        <h2 class="bi-card-title">The creative feedback loop: making each batch better than the last</h2>
+        <p class="bi-card-desc">A creative system without a feedback loop is just random production. Here's how to structure a cycle that learns and improves.</p>
+        <div class="bi-card-foot"><span class="bi-card-meta">6 min · Apr 2026</span><span class="bi-card-read">Read →</span></div>
+      </div>
+    </a>
+
+  </div><!-- /grid EN -->
+
+  <div class="bi-back">
+    <a href="../index.html" class="lang-es">← Volver al inicio</a>
+    <a href="../index.html" class="lang-en">← Back to home</a>
+  </div>
+
+</div>
+
+<footer class="subpage-footer">
+  <a href="../index.html" class="subpage-footer-logo">
+    <img src="../assets/logo.png" alt="SGF" />
+    START GROW FAST AI AGENTS
+  </a>
+  <div class="subpage-footer-links">
+    <span class="lang-es"><a href="../index.html#services">Servicios</a></span>
+    <span class="lang-en"><a href="../index.html#services">Services</a></span>
+    <span class="lang-es"><a href="../index.html#how">El Sistema</a></span>
+    <span class="lang-en"><a href="../index.html#how">The System</a></span>
+    <span class="lang-es"><a href="../index.html#contact">Contacto</a></span>
+    <span class="lang-en"><a href="../index.html#contact">Contact</a></span>
+    <a href="../legal/privacy.html" class="lang-es">Privacidad</a>
+    <a href="../legal/privacy.html" class="lang-en">Privacy</a>
+    <a href="../legal/terms.html" class="lang-es">Términos</a>
+    <a href="../legal/terms.html" class="lang-en">Terms</a>
+  </div>
+  <span class="subpage-footer-copy lang-es">© 2026 START GROW FAST AI AGENTS · Motor creativo DFY con IA para agencias de performance ecommerce y marcas DTC visuales.</span>
+  <span class="subpage-footer-copy lang-en">© 2026 START GROW FAST AI AGENTS · DFY AI creative engine for performance ecommerce agencies and visual DTC brands.</span>
+</footer>
+
+<script src="blog-lang.js"></script>
+</body>
+</html>
