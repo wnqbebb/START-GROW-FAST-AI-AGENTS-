@@ -3038,7 +3038,7 @@ function BigCTA({ lang }) {
 // OPCIÓN A — Web3Forms (sin activación, funciona siempre):
 //   1. Ve a https://web3forms.com/ → pon team@startgrowfastaiagents.com → copia la clave
 //   2. Pégala aquí:
-const WEB3FORMS_KEY = "";   // ← pega aquí la clave de web3forms.com
+const WEB3FORMS_KEY = "e7f0a1ca-32e0-445c-a1ad-ee8ffe7dff45";   // ← pega aquí la clave de web3forms.com
 
 // OPCIÓN B — FormSubmit (un único endpoint, solo 1 activación):
 const FORM_MAIN = "team@startgrowfastaiagents.com";
