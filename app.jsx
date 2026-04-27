@@ -1968,6 +1968,7 @@ function Nav({ t, lang, setLang, onCta }) {
           </div>
         </div>
       </div>
+    </>
   );
 }
 
